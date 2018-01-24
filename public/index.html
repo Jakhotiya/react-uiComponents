@@ -10,6 +10,7 @@
   -->
   <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
   <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="%PUBLIC_URL%/magento-styles.css">
   <!--
     Notice the use of %PUBLIC_URL% in the tags above.
     It will be replaced with the URL of the `public` folder during the build.
@@ -19,11 +20,44 @@
     work correctly both with client-side routing and a non-root public URL.
     Learn how to configure a non-root public URL by running `npm run build`.
   -->
-  <title>React App</title>
+  <title>Async Commerce</title>
   
 </head>
-<body>
-  <div id="root"></div>
+<body class='page-layout-admin-1column'>
+<div class='menu-wrapper _fixed'>
+<nav class="admin__menu">
+  <ul id="nav" role="menubar">
+    <li class='level-0'><a href='#'><span>Products</span></a></li>
+  </ul>
+</nav>
+</div>
+  <div class='page-wrapper'>
+    <header class='page-header row'>
+		<h1>Magento2 uiComponents in React</h1>
+    </header>
+    <main class="page-content">
+      <!--react app here-->
+	<div id="root"></div>
+      <!--react end here-->
+    </main>
+	
+
+<footer class="page-footer">
+	<div class="page-footer-content row">
+		<div class="footer-legal">
+			<p class="copyright col-m-6">
+				<a class="link-copyright" href="#" target="_blank" title="Async"></a>
+				Copyright © 2018 Async All rights reserved.</p>
+			<div class="footer-legal-system col-m-6">
+				<p class="Async-version">
+					<strong>Async Commerce</strong> ver. 0.0.1</p>
+				<a class="link-report" href="https://github.com/Jakhotiya/react-uiComponents/issues" id="footer_bug_tracking">Report an Issue</a>
+			</div>
+		</div>
+	</div>
+</footer>
+  </div>
+  
   <!--
     This HTML file is a template.
     If you open it directly in the browser, you will see an empty page.

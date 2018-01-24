@@ -1,15 +1,23 @@
-import React from 'react';
-import { render } from 'react-dom';
-import Form from './Form';
+import React from "react";
+import { render } from "react-dom";
+import Form from "./Form";
 
-import './style.css';
-import './magento-styles.css';
+import Grid from "./Grid";
+import {GridData} from "./data-structures";
+
+import "./style.css";
+
+const rows = [];
+
+for(let key in GridData.items){
+  rows.push(GridData.items[key]);
+}
 
 const App = () => (
-  <div className='app-container'>
-    <h1>Magento2 uiComponents in React {'\u2728'}</h1>
-    <Form/>
+  <div className="app-container">
+    <Form />
+    <Grid rows={rows} visibleCols={GridData.visibleCols}/>
   </div>
 );
 
-render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById("root"));
