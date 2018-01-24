@@ -36,7 +36,11 @@ const TableBody = props=>{
   
 }
 
-
+const ColHead = props=>{
+  return (
+    <th className='data-grid-th'>{props.name}</th>
+  );
+}
 
 class Grid extends React.Component
 {
@@ -48,7 +52,7 @@ class Grid extends React.Component
         <table className="data-grid" data-role="grid">
           <thead>
             <tr>
-              {this.props.visibleCols.map((d, i) => <Col key={i} value={d} />)}
+              {this.props.visibleCols.map((d, i) => <ColHead key={i} name={d} />)}
             </tr>
           </thead>
           
