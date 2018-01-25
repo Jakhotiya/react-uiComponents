@@ -1,6 +1,9 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
+
+import { PageSizes} from './data-structures';
+
 //magento area dataGridActions
 import Bookmarks from './Components/listing/Bookmarks';
 import ColumnsControls from './Components/listing/ColumnsControls';
@@ -35,7 +38,7 @@ class Toolbar extends React.Component {
                 {this.props.totalRecords} records found
               </div>
               <div className="col-xs-9" >
-                 <Paging/>
+                <Paging options={PageSizes} totalRecords={this.props.totalRecords}/>
               </div>
             </div>
           </div>

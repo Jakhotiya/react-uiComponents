@@ -25,6 +25,13 @@ const TreeData = {
   ]
 }
 
+const PageSizes = [
+  {label:20,value:20},
+  { label: 40, value: 40 },
+  { label: 80, value: 80 },
+  { label: 100, value: 100 }
+];
+
 const GridData = {
   visibleCols:['entity_id','attribute_set_id','sku','name','price'],
   items: {
@@ -671,4 +678,4 @@ const GridData = {
   }
 };
 
-export { TreeData, GridData};
+export { TreeData, GridData, PageSizes};
