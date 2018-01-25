@@ -15,7 +15,6 @@ for(let key in GridData.items){
 
 const App = () => (
   <div className="app-container">
-    <Form />
     <Grid rows={rows} visibleCols={GridData.visibleCols}/>
   </div>
 );

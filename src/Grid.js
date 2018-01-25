@@ -1,4 +1,5 @@
 import React from 'react';
+import Toolbar from './Toolbar';
 
 
 const Col= props=>{
@@ -42,7 +43,7 @@ const ColHead = props=>{
   );
 }
 
-class Grid extends React.Component
+class Listing extends React.Component
 {
 
   render(){
@@ -63,6 +64,16 @@ class Grid extends React.Component
       </div>
     );
   }
+}
+
+
+const Grid = props=>{
+  return (
+    <div>
+      <Toolbar sticky='true' totalRecords={5}/>
+      <Listing {...props}/>
+    </div>
+  );
 }
 
 export default Grid;
