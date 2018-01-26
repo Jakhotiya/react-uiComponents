@@ -9,16 +9,11 @@ const Chips = props => {
 }
 
 
-const filters = [
-  { attribute: 'entity_id', range: true, type: 'text' }
-];
-
-
 const Range = props => {
   return (
     <Fragment>
       <legend class="admin__form-field-legend">
-        <span>props.label</span>
+        <span>{props.label}</span>
       </legend>
       <div class="admin__form-field">
         {props.elements.map(ele=>{

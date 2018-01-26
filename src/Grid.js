@@ -1,79 +1,106 @@
-import React from 'react';
-import Toolbar from './Toolbar';
+import React from "react";
+import PropTypes from "prop-types";
 
+import Toolbar from "./Toolbar";
 
-const Col= props=>{
-  return (<td>{props.value}</td>);
-}
+const Cell = props => {
+  return <td>{props.value}</td>;
+};
 
-const Row = props=>{
+//@TODO optimise render. visibleCols.map is called for every row. 
+
+const Row = props => {
   const rowClass = props.index % 2 ? "data-row _odd-row" : "data-row";
   return (
-    <tr className={rowClass} >
-      {props.visibleCols.map((d,i)=><Col key={i} value={props.row[d]}/>)}
+    <tr className={rowClass}>
+      {props.visibleCols.map((col, i) => <Cell key={col.index} value={props.row[col.index]} />)}
     </tr>
   );
-}
+};
 
-
-const TableBody = props=>{
-  if(props.rows.length>0){
+const TableBody = props => {
+  if (props.rows.length > 0) {
     return (
       <tbody>
-        {props.rows.map((row, index) => <Row key={index} index={index} row={row} visibleCols={props.visibleCols}/>)}
+        {props.rows.map((row, index) => (
+          <Row
+            key={index}
+            index={index}
+            row={row}
+            visibleCols={props.visibleCols}
+          />
+        ))}
       </tbody>
-   );
-  }else{
+    );
+  } else {
     return (
       <tbody>
         <tr className="data-grid-tr-no-data">
-          <td colspan={props.visibleCols.length} >
-           We couldn\'t find any records.
+          <td colspan={props.visibleCols.length}>
+            We couldn't find any records.
           </td>
-      </tr>
+        </tr>
       </tbody>
     );
   }
-  
-}
+};
 
-const ColHead = props=>{
-  return (
-    <th className='data-grid-th'>{props.name}</th>
-  );
-}
 
-class Listing extends React.Component
-{
-
-  render(){
-   
+class Listing extends React.Component {
+  render() {
     return (
       <div className="admin__data-grid-wrap" data-role="grid-wrapper">
         <table className="data-grid" data-role="grid">
           <thead>
             <tr>
-              {this.props.visibleCols.map((d, i) => <ColHead key={i} name={d} />)}
+              {this.props.visibleCols.map((col) => (
+                <th key={col.index} className="data-grid-th">{col.label}</th>
+              ))}
             </tr>
           </thead>
-          
-          <TableBody visibleCols={this.props.visibleCols} rows={this.props.rows}/>
-            
-          
+
+          <TableBody
+            visibleCols={this.props.visibleCols}
+            rows={this.props.rows}
+          />
         </table>
       </div>
     );
   }
 }
 
+Listing.propTypes = {
+  rows: PropTypes.array.isRequired,
+  visibleCols: PropTypes.array.isRequired
+};
 
-const Grid = props=>{
+const Grid = props => {
+  const rows = [];
+
+  for (let key in props.items) {
+    rows.push(props.items[key]);
+  }
+
+  const visibleCols = [];
+
+  for(let key in props.columns){
+    if(props.columns[key].isVisible){
+      visibleCols.push(props.columns[key]);
+    }
+  }
+
   return (
     <div>
-      <Toolbar sticky='true' totalRecords={5}/>
-      <Listing {...props}/>
+      <Toolbar sticky="true" totalRecords={props.totalRecords} />
+      <Listing rows={rows} visibleCols={visibleCols} />
     </div>
   );
-}
+};
+
+Grid.propTypes = {
+  columns: PropTypes.array.required,
+  totalRecords: PropTypes.number.required,
+  items: PropTypes.object.required
+};
 
 export default Grid;
