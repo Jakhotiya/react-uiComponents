@@ -26,6 +26,7 @@ class MassAction extends React.Component
   } 
 
   render(){
+    
     const isActive = this.state.open ? '_active':'';
     return (
       <div className={"action-select-wrap "+isActive} onClick={this.toggleCollapsible}>

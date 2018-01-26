@@ -2,27 +2,65 @@ import React, { Component, Fragment } from "react";
 import PropTypes from 'prop-types';
 
 import Input from 'Components/form/element/Input';
+import Chips from 'Components/listing/Chips';
+
+//remove this
+import {chips} from 'data-structures';
 
 
-const Chips = props => {
-  return (<div><small>You are running this application in <b>{process.env.NODE_PATH}</b> mode.</small></div>);
-}
 
+
+
+//@TODO add htmlFor attribute to all form fields
 
 const Range = props => {
   return (
-    <Fragment>
-      <legend class="admin__form-field-legend">
+    <fieldset className="admin__form-field" outereach="getRanges()" visible="$parent.isFilterVisible($data)">
+      <legend className="admin__form-field-legend">
         <span>{props.label}</span>
       </legend>
-      <div class="admin__form-field">
-        {props.elements.map(ele=>{
 
-        })}
+      <div className="admin__form-field">
+        <label className="admin__form-field-label" >
+          <span>from</span>
+        </label>
+        <div className="admin__form-field-control">
+          <input className="admin__control-text" type="text"
+            onChange={props.handleChange}
+            value={props.value}
+          />
+        </div>
       </div>
-    </Fragment>
+
+      <div className="admin__form-field">
+        <label className="admin__form-field-label" >
+          <span>to</span>
+        </label>
+        <div className="admin__form-field-control">
+          <input className="admin__control-text" type="text"
+            onChange={props.handleChange}
+            value={props.value}
+          />
+        </div>
+      </div>     
+    </fieldset>
   );
 }
+
+
+const Field = props=>(
+  <div className="admin__form-field">
+    <label className="admin__form-field-label" >
+      <span>{props.label}</span>
+    </label>
+    <div className="admin__form-field-control">
+      <input className="admin__control-text" type="text"
+        onChange={props.handleChange}
+        value={props.value}
+      />
+    </div>
+  </div>
+);
 
 class Filters extends Component {
 
@@ -36,7 +74,7 @@ class Filters extends Component {
   }
 
   expandFilters = () => {
-
+    this.setState({ open: true });
   }
 
   cancel = () => {
@@ -55,34 +93,39 @@ class Filters extends Component {
     const isActive = this.state.open ? '_active' : '';
     const show = this.hasVisible() && this.state.open ? '_show' : '';
 
+    const ranges = this.props.visibleCols.filter(col => col.isRange);
+    const plainFields = this.props.visibleCols.filter(col => !col.isRange)
+    
     return (
       <Fragment>
         <div className="data-grid-filters-actions-wrap">
           <div className="data-grid-filters-action-wrap">
-            <button className={"action-default " + isActive} data-action="grid-filter-expand" disabled={this.hasVisible()}> 
+            <button className={"action-default " + isActive}
+              onClick={this.expandFilters} disabled={!this.hasVisible()}>
               Filters
             </button>
           </div>
         </div>
 
-        <Chips />
+        <Chips previews={chips} />
 
-        <div className={"admin__data-grid-filters-wrap " + show} data-part="filter-form">
+        <div className={"admin__data-grid-filters-wrap " + show}>
           <fieldset className="admin__fieldset admin__data-grid-filters">
             <legend className="admin__filters-legend">
-              <span translate="'Advanced filter'" />
+              <span>Advanced filter</span>
             </legend>
-            <fieldset className="admin__form-field" outereach="getRanges()" visible="$parent.isFilterVisible($data)" render="" />
-            <div className="admin__form-field" outereach="getPlain()" visible="$parent.isFilterVisible($data)" render="" />
+            {ranges.map(col => <Range key={col.index} label={col.label} />)}
+            {plainFields.map(col=><Field key={col.index} label={col.label}/>)}
+            
           </fieldset>
 
           <div className="admin__data-grid-filters-footer">
             <div className="admin__footer-main-actions">
               <button className="action-tertiary" type="button" onClick={this.cancel}>
-                <span translate="'Cancel'" />
+                <span>Cancel</span>
               </button>
               <button className="action-secondary" type="button" onClick={this.apply}>
-                <span translate="'Apply Filters'" />
+                <span>Apply Filters</span>
               </button>
             </div>
           </div>

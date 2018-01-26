@@ -91,16 +91,16 @@ const Grid = props => {
 
   return (
     <div>
-      <Toolbar sticky="true" totalRecords={props.totalRecords} />
+      <Toolbar visibleCols={visibleCols} columns={props.columns} sticky="true" totalRecords={props.totalRecords} />
       <Listing rows={rows} visibleCols={visibleCols} />
     </div>
   );
 };
 
 Grid.propTypes = {
-  columns: PropTypes.array.required,
-  totalRecords: PropTypes.number.required,
-  items: PropTypes.object.required
+  columns: PropTypes.object.isRequired,
+  totalRecords: PropTypes.number.isRequired,
+  items: PropTypes.object.isRequired
 };
 
 export default Grid;

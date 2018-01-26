@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from 'prop-types';
 
 
-import { PageSizes} from './data-structures';
+import { PageSizes, viewArray} from './data-structures';
 
 //magento area dataGridActions
 import Bookmarks from './Components/listing/Bookmarks';
@@ -22,11 +22,11 @@ class Toolbar extends React.Component {
       <div className="admin__data-grid-header">
         <div className="admin__data-grid-header-row">
           <div className="admin__data-grid-actions-wrap">
-            <Bookmarks/>
+            <Bookmarks viewsArray={viewArray}/>
             <ColumnsControls/>
           </div>
 
-          <Filters/>
+          <Filters visibleCols={this.props.visibleCols}/>
         </div>
         <div className="admin__data-grid-header-row row row-gutter">
           <div className="col-xs-2">
@@ -50,7 +50,9 @@ class Toolbar extends React.Component {
 
 Toolbar.propTypes={
   sticky:PropTypes.string.isRequired,
-  totalRecords:PropTypes.number.isRequired
+  totalRecords:PropTypes.number.isRequired,
+  columns:PropTypes.object.isRequired,
+  visibleCols:PropTypes.array
 }
 
 export default Toolbar;

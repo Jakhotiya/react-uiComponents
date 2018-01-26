@@ -32,6 +32,15 @@ const PageSizes = [
   { label: 100, value: 100 }
 ];
 
+const viewArray = [
+  {index:1,label:'Default view'},
+  { index: 2, label: 'Minimal view' },
+]
+
+const chips = [
+  {index:'entity_id',label:'ID',value:{from:20,to:25}}
+];
+
 const Columns = {
   entity_id: {
     index: "entity_id",
@@ -44,7 +53,7 @@ const Columns = {
   sku: {
     index: "sku",
     label: "SKU",
-    isRange: true,
+    isRange: false,
     rangeType: "text",
     sortOrder: 40,
     isVisible: true
@@ -52,7 +61,7 @@ const Columns = {
   name: {
     index: "name",
     label: "Name",
-    isRange: true,
+    isRange: false,
     rangeType: "text",
     sortOrder: 60,
     isVisible: true
@@ -68,7 +77,7 @@ const Columns = {
   special_price: {
     index: "special_price",
     label: "Special Price",
-    isRange: true,
+    isRange: false,
     rangeType: "text",
     sortOrder: 100,
     isVisible: true
@@ -789,4 +798,4 @@ const data = {
   }
 };
 
-export { TreeData, data,Columns,PageSizes };
+export { TreeData, data, Columns, chips,PageSizes, viewArray };
