@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
+//@TODO add close on outerclick
 
 const Sizes = props=> {
 
@@ -9,12 +10,12 @@ const Sizes = props=> {
   return (
     <div className="selectmenu" >
       <div className="selectmenu-value">
-        <input type="text" value={props.value} id='pageSize' autoselect />
+        <input type="text" value={props.value} readOnly id='pageSize' onClick={props.toggleCollapsible}/>
       </div>
       <button className={"selectmenu-toggle " + isActive} type="button" onClick={props.toggleCollapsible}>
         <span>Select</span>
       </button>
-      <div className={"selectmenu-items " + isActive} outerClick="discardAll.bind($data)">
+      <div className={"selectmenu-items " + isActive} >
         <ul>
           {props.options.map(size => {
             return (
@@ -64,7 +65,7 @@ class Paging extends React.Component
   }
 
   setSize = (value) => {
-    this.setState({ pageSize: value });
+    this.setState({ pageSize: value, collapsible:false });
   }
 
   prev = ()=>{
@@ -82,18 +83,19 @@ class Paging extends React.Component
   render(){
     return (
       <div className="admin__data-grid-pager-wrap">
+
         <Sizes setSize={this.setSize} 
         options={this.props.options}
         open={this.state.collapsible} 
         toggleCollapsible={this.toggleCollapsible}
-        value='20' />
+        value={this.state.pageSize} />
         
-        <label class="admin__control-support-text" htmlFor='pageSize'> per page</label>
+        <label className="admin__control-support-text" htmlFor='pageSize'> per page</label>
         <div className="admin__data-grid-pager">
           <button className="action-previous" type="button"
             onClick={e => this.prev()} disabled={ this.state.currentPage === 1 } />
 
-          <input className="admin__control-text" type="number" id="current-page-input" value={this.state.currentPage} />
+          <input className="admin__control-text" type="number" id="current-page-input" defaultValue={this.state.currentPage} />
           <label className="admin__control-support-text" htmlFor='current-page-input'>
             of {this.state.totalPages}
           </label>

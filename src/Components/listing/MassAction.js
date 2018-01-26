@@ -32,7 +32,7 @@ class MassAction extends React.Component
         <button className="action-select" title='Select Items'>
           <span>Actions</span>
         </button>
-        <div class="action-menu-items">
+        <div className="action-menu-items">
         <ul className={"action-menu " + isActive} >
           {actions.map(action => <Action key={action.type} {...action} />)}
         </ul>
