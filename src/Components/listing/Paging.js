@@ -1,16 +1,16 @@
-import React from "react";
+import React, { Fragment } from "react";
 import PropTypes from 'prop-types';
 
 //@TODO add close on outerclick
 
-const Sizes = props=> {
+const Sizes = props => {
 
   const isActive = props.open ? '_active' : '';
 
   return (
-    <div className="selectmenu" >
+    <Fragment>
       <div className="selectmenu-value">
-        <input type="text" value={props.value} readOnly id='pageSize' onClick={props.toggleCollapsible}/>
+        <input type="text" value={props.value} readOnly id='pageSize' onClick={props.toggleCollapsible} />
       </div>
       <button className={"selectmenu-toggle " + isActive} type="button" onClick={props.toggleCollapsible}>
         <span>Select</span>
@@ -29,8 +29,7 @@ const Sizes = props=> {
           })}
         </ul>
       </div>
-    </div >
-
+    </Fragment>
   );
 }
 
@@ -41,65 +40,85 @@ Sizes.propTypes = {
 
 
 
-class Paging extends React.Component
-{
+class Paging extends React.Component {
 
-  state={
-    currentPage:1,
-    totalPages:0,
-    pageSize:20,
-    collapsible:false
+  state = {
+    currentPage: 1,
+    totalPages: 0,
+    pageSize: 20,
+    open: false
   }
 
   toggleCollapsible = (e) => {
-    this.setState({ collapsible: !this.state.collapsible });
+    this.setState({ open: !this.state.open });
   }
 
-  componentWillMount(){
-    const totalPages = Math.ceil(this.props.totalRecords /this.state.pageSize);
-    this.setState({totalPages});
+  componentWillMount() {
+    const totalPages = Math.ceil(this.props.totalRecords / this.state.pageSize);
+    this.setState({ totalPages });
   }
 
-  handleClick=e=>{
+  handleClick = e => {
 
   }
 
   setSize = (value) => {
-    this.setState({ pageSize: value, collapsible:false });
+    this.setState({ pageSize: value, open: false });
   }
 
-  prev = ()=>{
-    if(this.state.currentPage>1){
-      this.setState({currentPage:this.state.currentPage-1});
+  prev = () => {
+    if (this.state.currentPage > 1) {
+      this.setState({ currentPage: this.state.currentPage - 1 });
     }
   }
 
-  next  = ()=>{
+  next = () => {
     if (this.state.currentPage < this.state.totalPages) {
       this.setState({ currentPage: this.state.currentPage + 1 });
     }
   }
 
-  render(){
+  outerClick = e => {
+    if (this.node && !this.node.contains(e.target)) {
+      this.setState({ open: false });
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('click', this.outerClick);
+  }
+
+  componentWillUnMount() {
+    document.removeEventListener('click', this.outerClick);
+  }
+
+  //@TODO find out if this.destroyed on component unmount
+  ref = ele => {
+    this.node = ele;
+  }
+
+  render() {
     return (
       <div className="admin__data-grid-pager-wrap">
 
-        <Sizes setSize={this.setSize} 
-        options={this.props.options}
-        open={this.state.collapsible} 
-        toggleCollapsible={this.toggleCollapsible}
-        value={this.state.pageSize} />
-        
+        <div ref={this.ref} className="selectmenu" >
+          <Sizes setSize={this.setSize}
+            options={this.props.options}
+            open={this.state.open}
+            toggleCollapsible={this.toggleCollapsible}
+            value={this.state.pageSize} />
+        </div>
+
         <label className="admin__control-support-text" htmlFor='pageSize'> per page</label>
         <div className="admin__data-grid-pager">
           <button className="action-previous" type="button"
-            onClick={e => this.prev()} disabled={ this.state.currentPage === 1 } />
+            onClick={e => this.prev()} disabled={this.state.currentPage === 1} />
 
           <input className="admin__control-text" type="number" id="current-page-input" defaultValue={this.state.currentPage} />
           <label className="admin__control-support-text" htmlFor='current-page-input'>
             of {this.state.totalPages}
           </label>
-          <button className="action-next" type="button" onClick={e => this.prev()} disabled={this.state.currentPage===this.state.totalPages} />
+          <button className="action-next" type="button" onClick={e => this.prev()} disabled={this.state.currentPage === this.state.totalPages} />
         </div>
       </div>
     );
@@ -109,7 +128,7 @@ class Paging extends React.Component
 }
 
 Paging.propTypes = {
-  totalRecords:PropTypes.number.isRequired,
+  totalRecords: PropTypes.number.isRequired,
   options: PropTypes.array.isRequired
 }
 
