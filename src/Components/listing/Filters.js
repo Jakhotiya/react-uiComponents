@@ -15,7 +15,7 @@ import {chips} from 'data-structures';
 
 const Range = props => {
   return (
-    <fieldset className="admin__form-field" outereach="getRanges()" visible="$parent.isFilterVisible($data)">
+    <fieldset className="admin__form-field">
       <legend className="admin__form-field-legend">
         <span>{props.label}</span>
       </legend>
@@ -70,7 +70,9 @@ class Filters extends Component {
 
   hasVisible = () => {
     //@TODO implement this
-    return true;
+    if(this.props.visibleCols.length>0)
+       return true;
+    return false;   
   }
 
   expandFilters = () => {

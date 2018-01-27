@@ -74,6 +74,8 @@ Listing.propTypes = {
   visibleCols: PropTypes.array.isRequired
 };
 
+
+
 const Grid = props => {
   const rows = [];
 
@@ -81,13 +83,9 @@ const Grid = props => {
     rows.push(props.items[key]);
   }
 
-  const visibleCols = [];
+  const visibleCols = props.columns.filter(col=>col.isVisible);
 
-  for(let key in props.columns){
-    if(props.columns[key].isVisible){
-      visibleCols.push(props.columns[key]);
-    }
-  }
+ 
 
   return (
     <div>
@@ -98,7 +96,7 @@ const Grid = props => {
 };
 
 Grid.propTypes = {
-  columns: PropTypes.object.isRequired,
+  columns: PropTypes.array.isRequired,
   totalRecords: PropTypes.number.isRequired,
   items: PropTypes.object.isRequired
 };

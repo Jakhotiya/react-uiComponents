@@ -23,7 +23,7 @@ class Toolbar extends React.Component {
         <div className="admin__data-grid-header-row">
           <div className="admin__data-grid-actions-wrap">
             <Bookmarks viewsArray={viewArray}/>
-            <ColumnsControls/>
+            <ColumnsControls columns={this.props.columns}/>
           </div>
 
           <Filters visibleCols={this.props.visibleCols}/>
@@ -51,7 +51,7 @@ class Toolbar extends React.Component {
 Toolbar.propTypes={
   sticky:PropTypes.string.isRequired,
   totalRecords:PropTypes.number.isRequired,
-  columns:PropTypes.object.isRequired,
+  columns:PropTypes.array.isRequired,
   visibleCols:PropTypes.array
 }
 
