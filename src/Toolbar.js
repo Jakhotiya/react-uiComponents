@@ -22,7 +22,7 @@ class Toolbar extends React.Component {
       <div className="admin__data-grid-header">
         <div className="admin__data-grid-header-row">
           <div className="admin__data-grid-actions-wrap">
-            <Bookmarks viewsArray={viewArray}/>
+            <Bookmarks viewsArray={viewArray} customView={false}/>
             <ColumnsControls columns={this.props.columns}/>
           </div>
 

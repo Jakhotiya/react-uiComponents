@@ -32,13 +32,23 @@ const PageSizes = [
   { label: 100, value: 100 }
 ];
 
+
+/**
+ * 
+ * Magento also has paging configurations associated with views
+ * but for now we are going to skip them. It also has columns as object
+ * of shape colname: {visible:boolean,sortable:false}. For now we are going
+ * to keep it simple and have columns array which only contains visible columns
+ */
+
 const viewArray = [
-  {index:1,label:'Default view'},
-  { index: 2, label: 'Minimal view' },
+  { index: 1, label: 'Default view', editable: false, data: {columns:[], positions: {}, filters: {} } },
+  { index: 2, label: 'With Filters', editable: true, data: {columns:[],positions: {}, filters: {} }  },
+  { index: 3, label: 'Changed Position', editable: true, data: {columns:[],positions: {}, filters: {} } },
 ]
 
 const chips = [
-  {index:'entity_id',label:'ID',value:{from:20,to:25}}
+  { index: 'entity_id', label: 'ID', value: { from: 20, to: 25 } }
 ];
 
 const Columns = {
@@ -114,14 +124,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/6/c/6c8349cc7260ae62e3b1396831a8398f.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/6/c/6c8349cc7260ae62e3b1396831a8398f.jpg",
       thumbnail_alt: "Simple Product 1",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/1/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/6/c/6c8349cc7260ae62e3b1396831a8398f.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/6/c/6c8349cc7260ae62e3b1396831a8398f.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/1/",
@@ -149,14 +159,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/a/1/a1d0c6e83f027327d8461063f4ac58a6.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/a/1/a1d0c6e83f027327d8461063f4ac58a6.jpg",
       thumbnail_alt: "Simple Product 2",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/2/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/a/1/a1d0c6e83f027327d8461063f4ac58a6.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/a/1/a1d0c6e83f027327d8461063f4ac58a6.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/2/",
@@ -184,14 +194,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/d/6/d67d8ab4f4c10bf22aa353e27879133c.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/d/6/d67d8ab4f4c10bf22aa353e27879133c.jpg",
       thumbnail_alt: "Simple Product 3",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/3/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/d/6/d67d8ab4f4c10bf22aa353e27879133c.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/d/6/d67d8ab4f4c10bf22aa353e27879133c.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/3/",
@@ -219,14 +229,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/1/9/19ca14e7ea6328a42e0eb13d585e4c22.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/1/9/19ca14e7ea6328a42e0eb13d585e4c22.jpg",
       thumbnail_alt: "Simple Product 4",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/4/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/9/19ca14e7ea6328a42e0eb13d585e4c22.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/9/19ca14e7ea6328a42e0eb13d585e4c22.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/4/",
@@ -254,14 +264,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/1/8/182be0c5cdcd5072bb1864cdee4d3d6e.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/1/8/182be0c5cdcd5072bb1864cdee4d3d6e.jpg",
       thumbnail_alt: "Simple Product 5",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/5/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/8/182be0c5cdcd5072bb1864cdee4d3d6e.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/8/182be0c5cdcd5072bb1864cdee4d3d6e.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/5/",
@@ -289,14 +299,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/3/4/34173cb38f07f89ddbebc2ac9128303f.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/3/4/34173cb38f07f89ddbebc2ac9128303f.jpg",
       thumbnail_alt: "Simple Product 6",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/6/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/3/4/34173cb38f07f89ddbebc2ac9128303f.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/3/4/34173cb38f07f89ddbebc2ac9128303f.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/6/",
@@ -324,14 +334,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. ASDA Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. ASDA Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/0/2/02e74f10e0327ad868d138f2b4fdd6f0.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/0/2/02e74f10e0327ad868d138f2b4fdd6f0.jpg",
       thumbnail_alt: "Simple Product 7",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/7/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/0/2/02e74f10e0327ad868d138f2b4fdd6f0.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/0/2/02e74f10e0327ad868d138f2b4fdd6f0.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/7/",
@@ -359,14 +369,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Huawei BBVA Dell Macy's Morgan Stanley Telecom Italia Group Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Huawei BBVA Dell Macy's Morgan Stanley Telecom Italia Group Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/1/f/1ff1de774005f8da13f42943881c655f.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/1/f/1ff1de774005f8da13f42943881c655f.jpg",
       thumbnail_alt: "Simple Product 8",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/8/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/f/1ff1de774005f8da13f42943881c655f.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/f/1ff1de774005f8da13f42943881c655f.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/8/",
@@ -394,14 +404,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/3/c/3c59dc048e8850243be8079a5c74d079.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/3/c/3c59dc048e8850243be8079a5c74d079.jpg",
       thumbnail_alt: "Simple Product 9",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/9/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/3/c/3c59dc048e8850243be8079a5c74d079.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/3/c/3c59dc048e8850243be8079a5c74d079.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/9/",
@@ -429,14 +439,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Sumitomo Telstra Sky adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Sumitomo Telstra Sky adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/6/f/6f4922f45568161a8cdf4ad2299f6d23.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/6/f/6f4922f45568161a8cdf4ad2299f6d23.jpg",
       thumbnail_alt: "Simple Product 10",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/10/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/6/f/6f4922f45568161a8cdf4ad2299f6d23.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/6/f/6f4922f45568161a8cdf4ad2299f6d23.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/10/",
@@ -464,14 +474,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Honeywell SK Group Canon Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Honeywell SK Group Canon Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/9/b/9bf31c7ff062936a96d3c8bd1f8f2ff3.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/9/b/9bf31c7ff062936a96d3c8bd1f8f2ff3.jpg",
       thumbnail_alt: "Simple Product 11",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/11/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/9/b/9bf31c7ff062936a96d3c8bd1f8f2ff3.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/9/b/9bf31c7ff062936a96d3c8bd1f8f2ff3.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/11/",
@@ -499,14 +509,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/c/2/c20ad4d76fe97759aa27a0c99bff6710.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/c/2/c20ad4d76fe97759aa27a0c99bff6710.jpg",
       thumbnail_alt: "Simple Product 12",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/12/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/c/2/c20ad4d76fe97759aa27a0c99bff6710.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/c/2/c20ad4d76fe97759aa27a0c99bff6710.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/12/",
@@ -534,14 +544,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Renault Gillette MetLife Kellogg's Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Renault Gillette MetLife Kellogg's Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/4/5/45c48cce2e2d7fbdea1afc51c7c6ad26.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/4/5/45c48cce2e2d7fbdea1afc51c7c6ad26.jpg",
       thumbnail_alt: "Simple Product 13",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/13/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/4/5/45c48cce2e2d7fbdea1afc51c7c6ad26.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/4/5/45c48cce2e2d7fbdea1afc51c7c6ad26.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/13/",
@@ -569,14 +579,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. ASDA adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. ASDA adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/1/6/1679091c5a880faf6fb5e6087eb1b2dc.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/1/6/1679091c5a880faf6fb5e6087eb1b2dc.jpg",
       thumbnail_alt: "Simple Product 14",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/14/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/6/1679091c5a880faf6fb5e6087eb1b2dc.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/6/1679091c5a880faf6fb5e6087eb1b2dc.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/14/",
@@ -604,14 +614,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/e/c/eccbc87e4b5ce2fe28308fd9f2a7baf3.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/e/c/eccbc87e4b5ce2fe28308fd9f2a7baf3.jpg",
       thumbnail_alt: "Simple Product 15",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/15/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/e/c/eccbc87e4b5ce2fe28308fd9f2a7baf3.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/e/c/eccbc87e4b5ce2fe28308fd9f2a7baf3.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/15/",
@@ -639,14 +649,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. China State Construction Gazprom Capital One VISA Huawei BBVA NBC International Dell Macy's DirecTV Morgan Stanley Telecom Italia Group Sainsbury's Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. China State Construction Gazprom Capital One VISA Huawei BBVA NBC International Dell Macy's DirecTV Morgan Stanley Telecom Italia Group Sainsbury's Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/f/8/f899139df5e1059396431415e770c6dd.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/f/8/f899139df5e1059396431415e770c6dd.jpg",
       thumbnail_alt: "Simple Product 16",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/16/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/f/8/f899139df5e1059396431415e770c6dd.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/f/8/f899139df5e1059396431415e770c6dd.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/16/",
@@ -674,14 +684,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Ping An Petronas Bosch Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Ping An Petronas Bosch Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/e/2/e2ef524fbf3d9fe611d5a8e90fefdc9c.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/e/2/e2ef524fbf3d9fe611d5a8e90fefdc9c.jpg",
       thumbnail_alt: "Simple Product 17",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/17/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/e/2/e2ef524fbf3d9fe611d5a8e90fefdc9c.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/e/2/e2ef524fbf3d9fe611d5a8e90fefdc9c.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/17/",
@@ -709,14 +719,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. TimeWarner E.ON adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. TimeWarner E.ON adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/f/4/f4b9ec30ad9f68f89b29639786cb62ef.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/f/4/f4b9ec30ad9f68f89b29639786cb62ef.jpg",
       thumbnail_alt: "Simple Product 18",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/18/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/f/4/f4b9ec30ad9f68f89b29639786cb62ef.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/f/4/f4b9ec30ad9f68f89b29639786cb62ef.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/18/",
@@ -744,14 +754,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Itaú Facebook Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Itaú Facebook Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/5/4/54229abfcfa5649e7003b83dd4755294.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/5/4/54229abfcfa5649e7003b83dd4755294.jpg",
       thumbnail_alt: "Simple Product 19",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/19/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/5/4/54229abfcfa5649e7003b83dd4755294.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/5/4/54229abfcfa5649e7003b83dd4755294.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/19/",
@@ -779,14 +789,14 @@ const data = {
       visibility: "4",
       tax_class_id: "2",
       short_description:
-        "Experiences slopes stepped curious Darwin. Time Warner Cable Starbucks Sumitomo Telstra Sky Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
+      "Experiences slopes stepped curious Darwin. Time Warner Cable Starbucks Sumitomo Telstra Sky Société Générale adidas Eni Caterpillar Johnson Scotiabank Mizuho",
       websites: "Main Website",
       thumbnail_src:
-        "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/2/a/2a38a4a9316c49e5a833517c45d31070.jpg",
+      "https://mage.dev/media/catalog/product/cache/fd4c882ce4b945a790b629f572e4ef93/2/a/2a38a4a9316c49e5a833517c45d31070.jpg",
       thumbnail_alt: "Simple Product 20",
       thumbnail_link: "https://mage.dev/admin/catalog/product/edit/id/20/",
       thumbnail_orig_src:
-        "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/2/a/2a38a4a9316c49e5a833517c45d31070.jpg",
+      "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/2/a/2a38a4a9316c49e5a833517c45d31070.jpg",
       actions: {
         edit: {
           href: "https://mage.dev/admin/catalog/product/edit/id/20/",
@@ -798,4 +808,4 @@ const data = {
   }
 };
 
-export { TreeData, data, Columns, chips,PageSizes, viewArray };
+export { TreeData, data, Columns, chips, PageSizes, viewArray };
