@@ -2,8 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Toolbar from "./Toolbar";
+import Action from './Components/listing/cells/Action';
 
 const Cell = props => {
+  if(typeof props.value==='object'){
+    return (<td><Action actions={props.value}/></td>);
+  }
   return <td>{props.value}</td>;
 };
 

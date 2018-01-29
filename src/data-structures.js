@@ -99,6 +99,12 @@ const Columns = {
     rangeType: "text",
     sortOrder: 60,
     isVisible: true
+  },
+  actions:{
+    index:'actions',
+    label:'Actions',
+    isRange:false,
+    isVisible:true
   }
 };
 
