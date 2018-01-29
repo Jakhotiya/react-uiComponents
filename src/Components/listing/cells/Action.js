@@ -1,6 +1,8 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
+import {Link} from 'react-router-dom';
+
 
 class Collapsible extends React.Component{
 
@@ -17,13 +19,13 @@ class Collapsible extends React.Component{
     const keys = Object.keys(this.props.actions);
     const {actions} = this.props;
     return (
-      <div class="action-select-wrap ">
-        <button class="action-select" onClick={this.toggleCollapsible}>Select</button>
-        <ul class={"action-menu "+ active}>
+      <div className="action-select-wrap ">
+        <button className="action-select" onClick={this.toggleCollapsible}>Select</button>
+        <ul className={"action-menu "+ active}>
           {keys.map(action=>{
           return (
             <li key={action}>
-              <a class="action-menu-item" href={actions[action].href}>{actions[action].label}</a>
+              <a className="action-menu-item" href={actions[action].href}>{actions[action].label}</a>
             </li>
           );
         })}
@@ -39,11 +41,11 @@ const Action = ({actions})=>{
   if (keys.length===1){
      const action = actions[keys[0]];
     return (
-      <a
-        class="action-menu-item"
-        href={action.href}>
+      <Link
+        className="action-menu-item"
+        to={action.href}>
         {action.label}
-        </a>
+        </Link>
     );
   }
 

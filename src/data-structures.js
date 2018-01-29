@@ -140,7 +140,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/6/c/6c8349cc7260ae62e3b1396831a8398f.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/1/",
+          href: "product/edit/1",
           label: "Edit",
           hidden: false
         }
@@ -175,7 +175,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/a/1/a1d0c6e83f027327d8461063f4ac58a6.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/2/",
+          href: "/product/edit/2",
           label: "Edit",
           hidden: false
         }
@@ -210,7 +210,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/d/6/d67d8ab4f4c10bf22aa353e27879133c.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/3/",
+          href: "/product/edit/3",
           label: "Edit",
           hidden: false
         }
@@ -245,7 +245,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/9/19ca14e7ea6328a42e0eb13d585e4c22.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/4/",
+          href: "/product/edit/4",
           label: "Edit",
           hidden: false
         }
@@ -280,7 +280,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/8/182be0c5cdcd5072bb1864cdee4d3d6e.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/5/",
+          href: "/product/edit/5/",
           label: "Edit",
           hidden: false
         }
@@ -315,7 +315,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/3/4/34173cb38f07f89ddbebc2ac9128303f.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/6/",
+          href: "/product/edit/6/",
           label: "Edit",
           hidden: false
         }
@@ -350,7 +350,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/0/2/02e74f10e0327ad868d138f2b4fdd6f0.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/7/",
+          href: "/product/edit/7/",
           label: "Edit",
           hidden: false
         }
@@ -385,7 +385,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/f/1ff1de774005f8da13f42943881c655f.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/8/",
+          href: "/product/edit/8/",
           label: "Edit",
           hidden: false
         }
@@ -420,7 +420,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/3/c/3c59dc048e8850243be8079a5c74d079.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/9/",
+          href: "/product/edit/9/",
           label: "Edit",
           hidden: false
         }
@@ -455,7 +455,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/6/f/6f4922f45568161a8cdf4ad2299f6d23.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/10/",
+          href: "/product/edit/10/",
           label: "Edit",
           hidden: false
         }
@@ -490,7 +490,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/9/b/9bf31c7ff062936a96d3c8bd1f8f2ff3.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/11/",
+          href: "/product/edit/11/",
           label: "Edit",
           hidden: false
         }
@@ -525,7 +525,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/c/2/c20ad4d76fe97759aa27a0c99bff6710.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/12/",
+          href: "/product/edit/12/",
           label: "Edit",
           hidden: false
         }
@@ -560,7 +560,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/4/5/45c48cce2e2d7fbdea1afc51c7c6ad26.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/13/",
+          href: "/product/edit/13/",
           label: "Edit",
           hidden: false
         }
@@ -595,7 +595,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/1/6/1679091c5a880faf6fb5e6087eb1b2dc.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/14/",
+          href: "/product/edit/14/",
           label: "Edit",
           hidden: false
         }
@@ -630,7 +630,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/e/c/eccbc87e4b5ce2fe28308fd9f2a7baf3.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/15/",
+          href: "/product/edit/15/",
           label: "Edit",
           hidden: false
         }
@@ -665,7 +665,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/f/8/f899139df5e1059396431415e770c6dd.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/16/",
+          href: "/product/edit/16/",
           label: "Edit",
           hidden: false
         }
@@ -700,7 +700,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/e/2/e2ef524fbf3d9fe611d5a8e90fefdc9c.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/17/",
+          href: "/product/edit/17/",
           label: "Edit",
           hidden: false
         }
@@ -735,7 +735,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/f/4/f4b9ec30ad9f68f89b29639786cb62ef.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/18/",
+          href: "/product/edit/18/",
           label: "Edit",
           hidden: false
         }
@@ -770,7 +770,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/5/4/54229abfcfa5649e7003b83dd4755294.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/19/",
+          href: "/product/edit/19/",
           label: "Edit",
           hidden: false
         }
@@ -805,7 +805,7 @@ const data = {
       "https://mage.dev/media/catalog/product/cache/8b5c625fb692b8dde426740670a5d3db/2/a/2a38a4a9316c49e5a833517c45d31070.jpg",
       actions: {
         edit: {
-          href: "https://mage.dev/admin/catalog/product/edit/id/20/",
+          href: "/product/edit/20/",
           label: "Edit",
           hidden: false
         }

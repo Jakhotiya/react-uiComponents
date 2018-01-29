@@ -1,24 +1,36 @@
 import React from 'react';
 
-import Tree from './Components/Tree';
 import Button from './Components/form/element/Button';
-import {TreeData} from './data-structures';
+import {data} from './data-structures';
 
 
 class Form extends React.Component 
 {
+  state:{
+    fetching:true,
+    product:{},
+    attributeSet:{}
+  }
+
+  /**
+   * fetch product from local data
+   * if it does not exist then attempt to download
+   * if that fails then display warning
+   */
+  componentWillMount(){
+    const productId = this.props.match.params.id;
+
+    this.setState({ product: data.items[productId]});
+  }
 
   render(){
+    
     return (
-      <div class='showcase'>
+      <div>
         <div>
-          <h4>1) Magento Category Tree</h4>
-          <Tree {...TreeData} />
-        </div>
-        <div>
-          <h4>Magento Buttons</h4>
-          <Button title='Click me' />
-        </div>
+          <h1> Magento Product Form</h1>
+          <p>You are editing <strong>{this.state.product.name}</strong></p>
+        </div> 
       </div>
     )
   }
