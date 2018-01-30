@@ -1,0 +1,1407 @@
+{
+  "items": [
+    {
+      "attribute_id": 73,
+      "attribute_code": "name",
+      "frontend_input": "text",
+      "is_required": true,
+      "options": [],
+      "default_frontend_label": "Product Name",
+      "is_unique": "0",
+      "frontend_class": "validate-length maximum-length-255",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 74,
+      "attribute_code": "sku",
+      "frontend_input": "text",
+      "is_required": true,
+      "options": [],
+      "default_frontend_label": "SKU",
+      "is_unique": "1",
+      "frontend_class": "validate-length maximum-length-64",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 75,
+      "attribute_code": "description",
+      "frontend_input": "textarea",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Description",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 76,
+      "attribute_code": "short_description",
+      "frontend_input": "textarea",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Short Description",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 77,
+      "attribute_code": "price",
+      "frontend_input": "price",
+      "is_required": true,
+      "options": [],
+      "default_frontend_label": "Price",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 78,
+      "attribute_code": "special_price",
+      "frontend_input": "price",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Special Price",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 79,
+      "attribute_code": "special_from_date",
+      "frontend_input": "date",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Special Price From Date",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 80,
+      "attribute_code": "special_to_date",
+      "frontend_input": "date",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Special Price To Date",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 82,
+      "attribute_code": "weight",
+      "frontend_input": "weight",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Weight",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 84,
+      "attribute_code": "meta_title",
+      "frontend_input": "text",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Meta Title",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 85,
+      "attribute_code": "meta_keyword",
+      "frontend_input": "textarea",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Meta Keywords",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 86,
+      "attribute_code": "meta_description",
+      "frontend_input": "textarea",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Meta Description",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 87,
+      "attribute_code": "image",
+      "frontend_input": "media_image",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Base",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 88,
+      "attribute_code": "small_image",
+      "frontend_input": "media_image",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Small",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 89,
+      "attribute_code": "thumbnail",
+      "frontend_input": "media_image",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Thumbnail",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 90,
+      "attribute_code": "media_gallery",
+      "frontend_input": "gallery",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Media Gallery",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 91,
+      "attribute_code": "old_id",
+      "frontend_input": "text",
+      "is_required": false,
+      "options": [],
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 94,
+      "attribute_code": "news_from_date",
+      "frontend_input": "date",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Set Product as New from Date",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 95,
+      "attribute_code": "news_to_date",
+      "frontend_input": "date",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Set Product as New to Date",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 96,
+      "attribute_code": "gallery",
+      "frontend_input": "gallery",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Image Gallery",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 97,
+      "attribute_code": "status",
+      "frontend_input": "select",
+      "is_required": false,
+      "options": [
+        {
+          "label": "Enabled",
+          "value": "1"
+        },
+        {
+          "label": "Disabled",
+          "value": "2"
+        }
+      ],
+      "default_frontend_label": "Enable Product",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 98,
+      "attribute_code": "minimal_price",
+      "frontend_input": "price",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Minimal Price",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 99,
+      "attribute_code": "visibility",
+      "frontend_input": "select",
+      "is_required": false,
+      "options": [
+        {
+          "label": "Not Visible Individually",
+          "value": "1"
+        },
+        {
+          "label": "Catalog",
+          "value": "2"
+        },
+        {
+          "label": "Search",
+          "value": "3"
+        },
+        {
+          "label": "Catalog, Search",
+          "value": "4"
+        }
+      ],
+      "default_frontend_label": "Visibility",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 100,
+      "attribute_code": "custom_design",
+      "frontend_input": "select",
+      "is_required": false,
+      "options": [
+        {
+          "label": "-- Please Select --",
+          "value": ""
+        },
+        {
+          "label": "Magento Blank",
+          "value": "1"
+        },
+        {
+          "label": "Magento Luma",
+          "value": "2"
+        }
+      ],
+      "default_frontend_label": "New Theme",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 101,
+      "attribute_code": "custom_design_from",
+      "frontend_input": "date",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Active From",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 104,
+      "attribute_code": "page_layout",
+      "frontend_input": "select",
+      "is_required": false,
+      "options": [
+        {
+          "label": "No layout updates",
+          "value": ""
+        },
+        {
+          "label": "Empty",
+          "value": "empty"
+        },
+        {
+          "label": "1 column",
+          "value": "1column"
+        },
+        {
+          "label": "2 columns with left bar",
+          "value": "2columns-left"
+        },
+        {
+          "label": "2 columns with right bar",
+          "value": "2columns-right"
+        },
+        {
+          "label": "3 columns",
+          "value": "3columns"
+        }
+      ],
+      "default_frontend_label": "Layout",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 105,
+      "attribute_code": "category_ids",
+      "frontend_input": "text",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Categories",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 109,
+      "attribute_code": "image_label",
+      "frontend_input": "text",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Image Label",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 110,
+      "attribute_code": "small_image_label",
+      "frontend_input": "text",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Small Image Label",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 111,
+      "attribute_code": "thumbnail_label",
+      "frontend_input": "text",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "Thumbnail Label",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 112,
+      "attribute_code": "created_at",
+      "frontend_input": "date",
+      "is_required": true,
+      "options": [],
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 113,
+      "attribute_code": "updated_at",
+      "frontend_input": "date",
+      "is_required": true,
+      "options": [],
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 114,
+      "attribute_code": "country_of_manufacture",
+      "frontend_input": "select",
+      "is_required": false,
+      "options": [
+        {
+          "label": " ",
+          "value": ""
+        },
+        {
+          "label": "Afghanistan",
+          "value": "AF"
+        },
+        {
+          "label": "Albania",
+          "value": "AL"
+        },
+        {
+          "label": "Algeria",
+          "value": "DZ"
+        },
+        {
+          "label": "American Samoa",
+          "value": "AS"
+        },
+        {
+          "label": "Andorra",
+          "value": "AD"
+        },
+        {
+          "label": "Angola",
+          "value": "AO"
+        },
+        {
+          "label": "Anguilla",
+          "value": "AI"
+        },
+        {
+          "label": "Antarctica",
+          "value": "AQ"
+        },
+        {
+          "label": "Antigua & Barbuda",
+          "value": "AG"
+        },
+        {
+          "label": "Argentina",
+          "value": "AR"
+        },
+        {
+          "label": "Armenia",
+          "value": "AM"
+        },
+        {
+          "label": "Aruba",
+          "value": "AW"
+        },
+        {
+          "label": "Australia",
+          "value": "AU"
+        },
+        {
+          "label": "Austria",
+          "value": "AT"
+        },
+        {
+          "label": "Azerbaijan",
+          "value": "AZ"
+        },
+        {
+          "label": "Bahamas",
+          "value": "BS"
+        },
+        {
+          "label": "Bahrain",
+          "value": "BH"
+        },
+        {
+          "label": "Bangladesh",
+          "value": "BD"
+        },
+        {
+          "label": "Barbados",
+          "value": "BB"
+        },
+        {
+          "label": "Belarus",
+          "value": "BY"
+        },
+        {
+          "label": "Belgium",
+          "value": "BE"
+        },
+        {
+          "label": "Belize",
+          "value": "BZ"
+        },
+        {
+          "label": "Benin",
+          "value": "BJ"
+        },
+        {
+          "label": "Bermuda",
+          "value": "BM"
+        },
+        {
+          "label": "Bhutan",
+          "value": "BT"
+        },
+        {
+          "label": "Bolivia",
+          "value": "BO"
+        },
+        {
+          "label": "Bosnia & Herzegovina",
+          "value": "BA"
+        },
+        {
+          "label": "Botswana",
+          "value": "BW"
+        },
+        {
+          "label": "Bouvet Island",
+          "value": "BV"
+        },
+        {
+          "label": "Brazil",
+          "value": "BR"
+        },
+        {
+          "label": "British Indian Ocean Territory",
+          "value": "IO"
+        },
+        {
+          "label": "British Virgin Islands",
+          "value": "VG"
+        },
+        {
+          "label": "Brunei",
+          "value": "BN"
+        },
+        {
+          "label": "Bulgaria",
+          "value": "BG"
+        },
+        {
+          "label": "Burkina Faso",
+          "value": "BF"
+        },
+        {
+          "label": "Burundi",
+          "value": "BI"
+        },
+        {
+          "label": "Cambodia",
+          "value": "KH"
+        },
+        {
+          "label": "Cameroon",
+          "value": "CM"
+        },
+        {
+          "label": "Canada",
+          "value": "CA"
+        },
+        {
+          "label": "Cape Verde",
+          "value": "CV"
+        },
+        {
+          "label": "Cayman Islands",
+          "value": "KY"
+        },
+        {
+          "label": "Central African Republic",
+          "value": "CF"
+        },
+        {
+          "label": "Chad",
+          "value": "TD"
+        },
+        {
+          "label": "Chile",
+          "value": "CL"
+        },
+        {
+          "label": "China",
+          "value": "CN"
+        },
+        {
+          "label": "Christmas Island",
+          "value": "CX"
+        },
+        {
+          "label": "Cocos (Keeling) Islands",
+          "value": "CC"
+        },
+        {
+          "label": "Colombia",
+          "value": "CO"
+        },
+        {
+          "label": "Comoros",
+          "value": "KM"
+        },
+        {
+          "label": "Congo - Brazzaville",
+          "value": "CG"
+        },
+        {
+          "label": "Congo - Kinshasa",
+          "value": "CD"
+        },
+        {
+          "label": "Cook Islands",
+          "value": "CK"
+        },
+        {
+          "label": "Costa Rica",
+          "value": "CR"
+        },
+        {
+          "label": "Croatia",
+          "value": "HR"
+        },
+        {
+          "label": "Cuba",
+          "value": "CU"
+        },
+        {
+          "label": "Cyprus",
+          "value": "CY"
+        },
+        {
+          "label": "Czechia",
+          "value": "CZ"
+        },
+        {
+          "label": "Côte d’Ivoire",
+          "value": "CI"
+        },
+        {
+          "label": "Denmark",
+          "value": "DK"
+        },
+        {
+          "label": "Djibouti",
+          "value": "DJ"
+        },
+        {
+          "label": "Dominica",
+          "value": "DM"
+        },
+        {
+          "label": "Dominican Republic",
+          "value": "DO"
+        },
+        {
+          "label": "Ecuador",
+          "value": "EC"
+        },
+        {
+          "label": "Egypt",
+          "value": "EG"
+        },
+        {
+          "label": "El Salvador",
+          "value": "SV"
+        },
+        {
+          "label": "Equatorial Guinea",
+          "value": "GQ"
+        },
+        {
+          "label": "Eritrea",
+          "value": "ER"
+        },
+        {
+          "label": "Estonia",
+          "value": "EE"
+        },
+        {
+          "label": "Ethiopia",
+          "value": "ET"
+        },
+        {
+          "label": "Falkland Islands",
+          "value": "FK"
+        },
+        {
+          "label": "Faroe Islands",
+          "value": "FO"
+        },
+        {
+          "label": "Fiji",
+          "value": "FJ"
+        },
+        {
+          "label": "Finland",
+          "value": "FI"
+        },
+        {
+          "label": "France",
+          "value": "FR"
+        },
+        {
+          "label": "French Guiana",
+          "value": "GF"
+        },
+        {
+          "label": "French Polynesia",
+          "value": "PF"
+        },
+        {
+          "label": "French Southern Territories",
+          "value": "TF"
+        },
+        {
+          "label": "Gabon",
+          "value": "GA"
+        },
+        {
+          "label": "Gambia",
+          "value": "GM"
+        },
+        {
+          "label": "Georgia",
+          "value": "GE"
+        },
+        {
+          "label": "Germany",
+          "value": "DE"
+        },
+        {
+          "label": "Ghana",
+          "value": "GH"
+        },
+        {
+          "label": "Gibraltar",
+          "value": "GI"
+        },
+        {
+          "label": "Greece",
+          "value": "GR"
+        },
+        {
+          "label": "Greenland",
+          "value": "GL"
+        },
+        {
+          "label": "Grenada",
+          "value": "GD"
+        },
+        {
+          "label": "Guadeloupe",
+          "value": "GP"
+        },
+        {
+          "label": "Guam",
+          "value": "GU"
+        },
+        {
+          "label": "Guatemala",
+          "value": "GT"
+        },
+        {
+          "label": "Guernsey",
+          "value": "GG"
+        },
+        {
+          "label": "Guinea",
+          "value": "GN"
+        },
+        {
+          "label": "Guinea-Bissau",
+          "value": "GW"
+        },
+        {
+          "label": "Guyana",
+          "value": "GY"
+        },
+        {
+          "label": "Haiti",
+          "value": "HT"
+        },
+        {
+          "label": "Heard & McDonald Islands",
+          "value": "HM"
+        },
+        {
+          "label": "Honduras",
+          "value": "HN"
+        },
+        {
+          "label": "Hong Kong SAR China",
+          "value": "HK"
+        },
+        {
+          "label": "Hungary",
+          "value": "HU"
+        },
+        {
+          "label": "Iceland",
+          "value": "IS"
+        },
+        {
+          "label": "India",
+          "value": "IN"
+        },
+        {
+          "label": "Indonesia",
+          "value": "ID"
+        },
+        {
+          "label": "Iran",
+          "value": "IR"
+        },
+        {
+          "label": "Iraq",
+          "value": "IQ"
+        },
+        {
+          "label": "Ireland",
+          "value": "IE"
+        },
+        {
+          "label": "Isle of Man",
+          "value": "IM"
+        },
+        {
+          "label": "Israel",
+          "value": "IL"
+        },
+        {
+          "label": "Italy",
+          "value": "IT"
+        },
+        {
+          "label": "Jamaica",
+          "value": "JM"
+        },
+        {
+          "label": "Japan",
+          "value": "JP"
+        },
+        {
+          "label": "Jersey",
+          "value": "JE"
+        },
+        {
+          "label": "Jordan",
+          "value": "JO"
+        },
+        {
+          "label": "Kazakhstan",
+          "value": "KZ"
+        },
+        {
+          "label": "Kenya",
+          "value": "KE"
+        },
+        {
+          "label": "Kiribati",
+          "value": "KI"
+        },
+        {
+          "label": "Kuwait",
+          "value": "KW"
+        },
+        {
+          "label": "Kyrgyzstan",
+          "value": "KG"
+        },
+        {
+          "label": "Laos",
+          "value": "LA"
+        },
+        {
+          "label": "Latvia",
+          "value": "LV"
+        },
+        {
+          "label": "Lebanon",
+          "value": "LB"
+        },
+        {
+          "label": "Lesotho",
+          "value": "LS"
+        },
+        {
+          "label": "Liberia",
+          "value": "LR"
+        },
+        {
+          "label": "Libya",
+          "value": "LY"
+        },
+        {
+          "label": "Liechtenstein",
+          "value": "LI"
+        },
+        {
+          "label": "Lithuania",
+          "value": "LT"
+        },
+        {
+          "label": "Luxembourg",
+          "value": "LU"
+        },
+        {
+          "label": "Macau SAR China",
+          "value": "MO"
+        },
+        {
+          "label": "Macedonia",
+          "value": "MK"
+        },
+        {
+          "label": "Madagascar",
+          "value": "MG"
+        },
+        {
+          "label": "Malawi",
+          "value": "MW"
+        },
+        {
+          "label": "Malaysia",
+          "value": "MY"
+        },
+        {
+          "label": "Maldives",
+          "value": "MV"
+        },
+        {
+          "label": "Mali",
+          "value": "ML"
+        },
+        {
+          "label": "Malta",
+          "value": "MT"
+        },
+        {
+          "label": "Marshall Islands",
+          "value": "MH"
+        },
+        {
+          "label": "Martinique",
+          "value": "MQ"
+        },
+        {
+          "label": "Mauritania",
+          "value": "MR"
+        },
+        {
+          "label": "Mauritius",
+          "value": "MU"
+        },
+        {
+          "label": "Mayotte",
+          "value": "YT"
+        },
+        {
+          "label": "Mexico",
+          "value": "MX"
+        },
+        {
+          "label": "Micronesia",
+          "value": "FM"
+        },
+        {
+          "label": "Moldova",
+          "value": "MD"
+        },
+        {
+          "label": "Monaco",
+          "value": "MC"
+        },
+        {
+          "label": "Mongolia",
+          "value": "MN"
+        },
+        {
+          "label": "Montenegro",
+          "value": "ME"
+        },
+        {
+          "label": "Montserrat",
+          "value": "MS"
+        },
+        {
+          "label": "Morocco",
+          "value": "MA"
+        },
+        {
+          "label": "Mozambique",
+          "value": "MZ"
+        },
+        {
+          "label": "Myanmar (Burma)",
+          "value": "MM"
+        },
+        {
+          "label": "Namibia",
+          "value": "NA"
+        },
+        {
+          "label": "Nauru",
+          "value": "NR"
+        },
+        {
+          "label": "Nepal",
+          "value": "NP"
+        },
+        {
+          "label": "Netherlands",
+          "value": "NL"
+        },
+        {
+          "label": "New Caledonia",
+          "value": "NC"
+        },
+        {
+          "label": "New Zealand",
+          "value": "NZ"
+        },
+        {
+          "label": "Nicaragua",
+          "value": "NI"
+        },
+        {
+          "label": "Niger",
+          "value": "NE"
+        },
+        {
+          "label": "Nigeria",
+          "value": "NG"
+        },
+        {
+          "label": "Niue",
+          "value": "NU"
+        },
+        {
+          "label": "Norfolk Island",
+          "value": "NF"
+        },
+        {
+          "label": "North Korea",
+          "value": "KP"
+        },
+        {
+          "label": "Northern Mariana Islands",
+          "value": "MP"
+        },
+        {
+          "label": "Norway",
+          "value": "NO"
+        },
+        {
+          "label": "Oman",
+          "value": "OM"
+        },
+        {
+          "label": "Pakistan",
+          "value": "PK"
+        },
+        {
+          "label": "Palau",
+          "value": "PW"
+        },
+        {
+          "label": "Palestinian Territories",
+          "value": "PS"
+        },
+        {
+          "label": "Panama",
+          "value": "PA"
+        },
+        {
+          "label": "Papua New Guinea",
+          "value": "PG"
+        },
+        {
+          "label": "Paraguay",
+          "value": "PY"
+        },
+        {
+          "label": "Peru",
+          "value": "PE"
+        },
+        {
+          "label": "Philippines",
+          "value": "PH"
+        },
+        {
+          "label": "Pitcairn Islands",
+          "value": "PN"
+        },
+        {
+          "label": "Poland",
+          "value": "PL"
+        },
+        {
+          "label": "Portugal",
+          "value": "PT"
+        },
+        {
+          "label": "Qatar",
+          "value": "QA"
+        },
+        {
+          "label": "Romania",
+          "value": "RO"
+        },
+        {
+          "label": "Russia",
+          "value": "RU"
+        },
+        {
+          "label": "Rwanda",
+          "value": "RW"
+        },
+        {
+          "label": "Réunion",
+          "value": "RE"
+        },
+        {
+          "label": "Samoa",
+          "value": "WS"
+        },
+        {
+          "label": "San Marino",
+          "value": "SM"
+        },
+        {
+          "label": "Saudi Arabia",
+          "value": "SA"
+        },
+        {
+          "label": "Senegal",
+          "value": "SN"
+        },
+        {
+          "label": "Serbia",
+          "value": "RS"
+        },
+        {
+          "label": "Seychelles",
+          "value": "SC"
+        },
+        {
+          "label": "Sierra Leone",
+          "value": "SL"
+        },
+        {
+          "label": "Singapore",
+          "value": "SG"
+        },
+        {
+          "label": "Slovakia",
+          "value": "SK"
+        },
+        {
+          "label": "Slovenia",
+          "value": "SI"
+        },
+        {
+          "label": "Solomon Islands",
+          "value": "SB"
+        },
+        {
+          "label": "Somalia",
+          "value": "SO"
+        },
+        {
+          "label": "South Africa",
+          "value": "ZA"
+        },
+        {
+          "label": "South Georgia & South Sandwich Islands",
+          "value": "GS"
+        },
+        {
+          "label": "South Korea",
+          "value": "KR"
+        },
+        {
+          "label": "Spain",
+          "value": "ES"
+        },
+        {
+          "label": "Sri Lanka",
+          "value": "LK"
+        },
+        {
+          "label": "St. Barthélemy",
+          "value": "BL"
+        },
+        {
+          "label": "St. Helena",
+          "value": "SH"
+        },
+        {
+          "label": "St. Kitts & Nevis",
+          "value": "KN"
+        },
+        {
+          "label": "St. Lucia",
+          "value": "LC"
+        },
+        {
+          "label": "St. Martin",
+          "value": "MF"
+        },
+        {
+          "label": "St. Pierre & Miquelon",
+          "value": "PM"
+        },
+        {
+          "label": "St. Vincent & Grenadines",
+          "value": "VC"
+        },
+        {
+          "label": "Sudan",
+          "value": "SD"
+        },
+        {
+          "label": "Suriname",
+          "value": "SR"
+        },
+        {
+          "label": "Svalbard & Jan Mayen",
+          "value": "SJ"
+        },
+        {
+          "label": "Swaziland",
+          "value": "SZ"
+        },
+        {
+          "label": "Sweden",
+          "value": "SE"
+        },
+        {
+          "label": "Switzerland",
+          "value": "CH"
+        },
+        {
+          "label": "Syria",
+          "value": "SY"
+        },
+        {
+          "label": "São Tomé & Príncipe",
+          "value": "ST"
+        },
+        {
+          "label": "Taiwan",
+          "value": "TW"
+        },
+        {
+          "label": "Tajikistan",
+          "value": "TJ"
+        },
+        {
+          "label": "Tanzania",
+          "value": "TZ"
+        },
+        {
+          "label": "Thailand",
+          "value": "TH"
+        },
+        {
+          "label": "Timor-Leste",
+          "value": "TL"
+        },
+        {
+          "label": "Togo",
+          "value": "TG"
+        },
+        {
+          "label": "Tokelau",
+          "value": "TK"
+        },
+        {
+          "label": "Tonga",
+          "value": "TO"
+        },
+        {
+          "label": "Trinidad & Tobago",
+          "value": "TT"
+        },
+        {
+          "label": "Tunisia",
+          "value": "TN"
+        },
+        {
+          "label": "Turkey",
+          "value": "TR"
+        },
+        {
+          "label": "Turkmenistan",
+          "value": "TM"
+        },
+        {
+          "label": "Turks & Caicos Islands",
+          "value": "TC"
+        },
+        {
+          "label": "Tuvalu",
+          "value": "TV"
+        },
+        {
+          "label": "U.S. Outlying Islands",
+          "value": "UM"
+        },
+        {
+          "label": "U.S. Virgin Islands",
+          "value": "VI"
+        },
+        {
+          "label": "Uganda",
+          "value": "UG"
+        },
+        {
+          "label": "Ukraine",
+          "value": "UA"
+        },
+        {
+          "label": "United Arab Emirates",
+          "value": "AE"
+        },
+        {
+          "label": "United Kingdom",
+          "value": "GB"
+        },
+        {
+          "label": "United States",
+          "value": "US"
+        },
+        {
+          "label": "Uruguay",
+          "value": "UY"
+        },
+        {
+          "label": "Uzbekistan",
+          "value": "UZ"
+        },
+        {
+          "label": "Vanuatu",
+          "value": "VU"
+        },
+        {
+          "label": "Vatican City",
+          "value": "VA"
+        },
+        {
+          "label": "Venezuela",
+          "value": "VE"
+        },
+        {
+          "label": "Vietnam",
+          "value": "VN"
+        },
+        {
+          "label": "Wallis & Futuna",
+          "value": "WF"
+        },
+        {
+          "label": "Western Sahara",
+          "value": "EH"
+        },
+        {
+          "label": "Yemen",
+          "value": "YE"
+        },
+        {
+          "label": "Zambia",
+          "value": "ZM"
+        },
+        {
+          "label": "Zimbabwe",
+          "value": "ZW"
+        },
+        {
+          "label": "Åland Islands",
+          "value": "AX"
+        }
+      ],
+      "default_frontend_label": "Country of Manufacture",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 115,
+      "attribute_code": "quantity_and_stock_status",
+      "frontend_input": "select",
+      "is_required": false,
+      "options": [
+        {
+          "label": "In Stock",
+          "value": "1"
+        },
+        {
+          "label": "Out of Stock",
+          "value": "0"
+        }
+      ],
+      "default_frontend_label": "Quantity",
+      "is_unique": "0",
+      "validation_rules": []
+    },
+    {
+      "attribute_id": 119,
+      "attribute_code": "url_key",
+      "frontend_input": "text",
+      "is_required": false,
+      "options": [],
+      "default_frontend_label": "URL Key",
+      "is_unique": "0",
+      "validation_rules": []
+    }
+  ]
+}
