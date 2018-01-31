@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Field from 'Components/form/Field';
 
 //@magentoFile : Magento_Ui/view/base/web/templates/form/fieldset.html
 class Fieldset extends React.Component {
@@ -35,11 +36,14 @@ class Fieldset extends React.Component {
         </div>
 
         <div className={"admin__fieldset-wrapper-content admin__collapsible-content " + open}>
-          <p>this is form component</p>
-          <fieldset
-            if="opened() || _wasOpened || initializeFieldsetDataByDefault"
-            className="admin__fieldset"
-            each="data: elems, as: 'element'" render="" />
+          
+          <fieldset className="admin__fieldset">
+            {this.props.attributes.map(attr=>{
+              return (<Field name={attr.name} 
+              value='get it from form state'
+              label={attr.label} />);
+            })}
+            </fieldset>
         </div>
       </div >
     );
@@ -48,7 +52,8 @@ class Fieldset extends React.Component {
 }
 
 Fieldset.propTypes = {
-  label: PropTypes.string.isRequired
+  label: PropTypes.string.isRequired,
+  attributes:PropTypes.array
 }
 
 export default Fieldset;

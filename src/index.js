@@ -40,11 +40,17 @@ for (let key in fields) {
 
 const columns = Object.values(Columns);
 
+const groups = Object.values(mage.groups);
+
 const GridView = (props) => (<Grid columns={columns} {...data} />);
 
-const ProductForm = (props) => <Form entityId={props.match.params.id} attributes={attributes}/>
+const ProductForm = (props) => {
+  
+  const entityId = parseInt(props.match.params.id);
+  return (<Form entityId={entityId} groups={groups} attributes={attributes}/>)
+}
 
-const App = () => (
+const App = (props) => (
   <div className="app-container">
   <Router>
     <React.Fragment>

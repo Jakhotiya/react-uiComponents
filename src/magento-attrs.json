@@ -1,4 +1,92 @@
 {
+  "groups": {
+    "product-details":{
+      "_index":"product-details",
+      "label":"Product details",
+      "sort_order":1,
+      "attributes":[
+        73,
+        74,
+        77,
+        78,
+        79,
+        80,
+        82
+      ]},
+    "content":{
+      "_index":"content",
+      "label":"Content",
+      "sort_order":2,
+      "attributes":[
+        75,
+        76
+      ]
+    },
+    "seo":{
+      "_index":"seo",
+      "label":"Search Engine Optimisation",
+      "sort_order":3, 
+      "attributes":[
+        84,
+        85,
+        86
+      ]
+    },
+    "configurations":{
+      "_index":"configurations",
+      "label":"Configurations",
+      "sort_order":4,
+      "attributes":[]
+    },
+    "media":{
+      "_index":"media",
+      "label":"Images and Videos",
+      "sort_order":5,
+      "attributes":[]
+    },
+    "product-relations":{
+      "_index":"product-relations",
+      "label": "Related Products, Up-Sells and Cross-Sells",
+      "sort_order": 5,
+      "attributes": []
+    },
+    "custom-options":{
+      "_index":"custom-options",
+      "label": "Customizable Options",
+      "sort_order": 5,
+      "attributes": []
+    },
+    "websites":{
+      "_index":"websites",
+      "label": "Products in Websites",
+      "sort_order": 5,
+      "attributes": []
+    },
+    "design":{
+      "_index":"design",
+      "label": "Design",
+      "sort_order": 5,
+      "attributes": []
+    },
+    "design-updates":{
+      "_index":"design-updates",
+      "label": "Schedule Design Update",
+      "sort_order": 5,
+      "attributes": []
+    },
+    "gift-options":{
+      "_index":"gift-options",
+      "label": "Gift Options",
+      "sort_order": 5,
+      "attributes": []
+    },
+    "downloadables":{
+      "_index":"downloadables",
+      "label": "Downloadable Information",
+      "sort_order": 5,
+      "attributes": []
+    }
+  },
   "items": [
     {
       "attribute_id": 73,

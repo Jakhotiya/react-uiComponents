@@ -2,8 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Button from 'Components/form/element/Button';
-import Fieldset from './Components/form/Fieldset';
+import Fieldset from 'Components/form/Fieldset';
 import { data } from './data-structures';
+
+//@TODO clearly describe and document handler APIs
+import Handler from './field-handlers';
 
 const ErrorComp = (props) => {
   return (<div>Oops! No such compoent of type {props.type}</div>)
@@ -32,15 +35,6 @@ const createField = (props) => {
 }
 
 
-const setSku = value => {
-  return { name: value, sku: value.toUpperCase() };
-}
-
-const transformer = {
-  name: setSku
-}
-
-
 class Form extends React.Component {
 
   constructor(props) {
@@ -64,9 +58,9 @@ class Form extends React.Component {
 
   handleChange = (name, value) => {
     let obj = {};
-    if (transformer.hasOwnProperty(name) &&
-      typeof transformer[name] === 'function') {
-      obj = transformer[name].call(null, value);
+    if (Handler.hasOwnProperty(name) &&
+      typeof Handler[name] === 'function') {
+      obj = Handler[name].call(null, value);
     } else {
       obj[name] = value;
     }
@@ -80,33 +74,23 @@ class Form extends React.Component {
    */
   componentWillMount() {
     const entityId = this.props.entityId;
-    console.log(entityId);
-
     this.setState({ product: data.items[entityId] });
   }
 
   render() {
     let props = { handleChange: this.handleChange, ...this.state };
+    const {attributes,groups} = this.props;
     return (
       <React.Fragment>
         <div>
-          <h1> Magento Product Form</h1>
           <p>You are editing <strong>{this.state.product.name}</strong></p>
         </div>
         <form>
           <div>
-            <Fieldset label="Product Details"/>
-            <Fieldset label="Content" />
-            <Fieldset label="Configurations" />
-            <Fieldset label="Images and Videos" />
-            <Fieldset label="Search Engine Optimisations" />
-            <Fieldset label="Related Products, Up-Sells and Cross-Sells" />
-            <Fieldset label="Customizable Options" />
-            <Fieldset label="Products in Websites" />
-            <Fieldset label="Design" />
-            <Fieldset label="Schedule Design Update" />
-            <Fieldset label="Gift Options" />
-            <Fieldset label="Downloadable Information" />
+            {groups.map(g=>{
+              let attrs = attributes.filter(value=>(g.attributes.indexOf(value.id)!==-1)); 
+              return (<Fieldset attributes={attrs} key={g._index} label={g.label}/>);
+            })}
           </div>
         </form>
       </React.Fragment>
@@ -116,7 +100,9 @@ class Form extends React.Component {
 }
 
 Form.propTypes = {
-  entityId: PropTypes.number.isRequired
+  entityId: PropTypes.number.isRequired,
+  attributes:PropTypes.array.isRequired,
+  groups:PropTypes.object.isRequired
 }
 
 export { registerComponent };
