@@ -1,29 +1,3 @@
-const TreeData = {
-  label: "Level 1",
-  childNodes: [
-    {
-      label: "Level 2",
-      childNodes: []
-    },
-    {
-      label: "Level 2",
-      childNodes: [
-        {
-          label: "Level 3",
-          childNodes: []
-        },
-        {
-          label: "Level 3",
-          childNodes: []
-        },
-        {
-          label: "Level 3",
-          childNodes: []
-        }
-      ]
-    }
-  ]
-};
 
 const PageSizes = [
   { label: 20, value: 20 },
@@ -814,4 +788,4 @@ const data = {
   }
 };
 
-export { TreeData, data, Columns, chips, PageSizes, viewArray };
+export {data, Columns, chips, PageSizes, viewArray };

@@ -15,6 +15,7 @@ class Fieldset extends React.Component {
 
   render() {
     const open = this.state.open ? '_show' : '_hide';
+    const { form, attributes,handleChange} = this.props;
 
     return (
       <div className="fieldset-wrapper admin__collapsible-block-wrapper">
@@ -38,10 +39,11 @@ class Fieldset extends React.Component {
         <div className={"admin__fieldset-wrapper-content admin__collapsible-content " + open}>
           
           <fieldset className="admin__fieldset">
-            {this.props.attributes.map(attr=>{
-              return (<Field name={attr.name} 
-              value='get it from form state'
-              label={attr.label} />);
+            {attributes.map(attr=>{
+              return (<Field attr={attr}
+              handleChange={handleChange}
+              value={form[attr.name]}
+               />);
             })}
             </fieldset>
         </div>

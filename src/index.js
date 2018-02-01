@@ -7,11 +7,8 @@ import {
 
 import Grid from "./Grid";
 import {data,Columns} from "./data-structures";
-import Form,{registerComponent} from './Form';
+import Form from './Form';
 import mage from './magento-attrs';
-
-import Input from 'Components/form/element/Input';
-
 
 
 let attributes = mage.items.map(d => {
@@ -24,19 +21,6 @@ let attributes = mage.items.map(d => {
   };
 })
 
-const fields = {
-  text: Input,
-  price: Input,
-  //select: SelectInput,
-  //radio: RadioGroup,
-  textarea: Input,
-  boolean: Input
-}
-
-
-for (let key in fields) {
-  registerComponent(key, fields[key]);
-}
 
 const columns = Object.values(Columns);
 

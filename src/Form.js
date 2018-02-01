@@ -1,39 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Button from 'Components/form/element/Button';
 import Fieldset from 'Components/form/Fieldset';
 import { data } from './data-structures';
 
 //@TODO clearly describe and document handler APIs
 import Handler from './field-handlers';
-
-const ErrorComp = (props) => {
-  return (<div>Oops! No such compoent of type {props.type}</div>)
-}
-
-let components = {};
-
-function registerComponent(componentType, component) {
-  //checks for valid components
-  components[componentType] = component;
-}
-
-//create form field HOC
-const createField = (props) => {
-
-  return function (attr, index) {
-    let Component = components.hasOwnProperty(attr.type)
-      ? components[attr.type] : ErrorComp;
-
-    return (<Component key={attr.id}
-      handleChange={(e) => props.handleChange(attr.name, e.target.value)}
-      value={props[attr.name]}
-    />);
-  }
-
-}
-
 
 class Form extends React.Component {
 
@@ -43,7 +15,8 @@ class Form extends React.Component {
     this.state = {
       fetching: true,
       product: {},
-      attributeSet: {}
+      attributeSet: {},
+      form:{}
     }
 
     props.attributes.forEach(attr => {
@@ -57,14 +30,14 @@ class Form extends React.Component {
   }
 
   handleChange = (name, value) => {
-    let obj = {};
+    let form = {};
     if (Handler.hasOwnProperty(name) &&
       typeof Handler[name] === 'function') {
-      obj = Handler[name].call(null, value);
+      form = Handler[name].call(null, value);
     } else {
-      obj[name] = value;
+      form[name] = value;
     }
-    this.setState(obj);
+    this.setState({form});
   }
 
   /**
@@ -74,11 +47,12 @@ class Form extends React.Component {
    */
   componentWillMount() {
     const entityId = this.props.entityId;
-    this.setState({ product: data.items[entityId] });
+    const product  = data.items[entityId];
+    this.setState({form:product});
   }
 
   render() {
-    let props = { handleChange: this.handleChange, ...this.state };
+  
     const {attributes,groups} = this.props;
     return (
       <React.Fragment>
@@ -89,7 +63,7 @@ class Form extends React.Component {
           <div>
             {groups.map(g=>{
               let attrs = attributes.filter(value=>(g.attributes.indexOf(value.id)!==-1)); 
-              return (<Fieldset attributes={attrs} key={g._index} label={g.label}/>);
+              return (<Fieldset form={this.state.form} handleChange={this.handleChange} attributes={attrs} key={g._index} label={g.label}/>);
             })}
           </div>
         </form>
@@ -104,8 +78,6 @@ Form.propTypes = {
   attributes:PropTypes.array.isRequired,
   groups:PropTypes.object.isRequired
 }
-
-export { registerComponent };
 
 export default Form;
 
