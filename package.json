@@ -3,11 +3,12 @@
   "description": "Magento 2 uiComponents in React",
   "version": "0.0.43",
   "dependencies": {
-    "react-dom": "16.0.0",
-    "react": "16.0.0"
+    "react": "16.2.0",
+    "react-dom": "16.2.0",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
-    "react-scripts": "1.0.0"
+    "react-scripts": "1.1.0"
   },
   "scripts": {
     "start": "react-scripts start",

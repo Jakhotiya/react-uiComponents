@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react";
 import PropTypes from 'prop-types';
 
 
-const Chip = ({ label, index, value }) => {
+const Chip = ({ label, index, value,...props }) => {
 
   let text = '';
 
