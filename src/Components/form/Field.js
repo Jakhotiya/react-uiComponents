@@ -31,12 +31,11 @@ const getField = (attr)=>{
 const Field = ({value,handleChange,attr})=>{
   const Component = getField(attr);
   return (
-    <div class="admin__field">
-      <label class="admin__field-label">
+    <div className="admin__field">
+      <label className="admin__field-label">
         <span>{attr.label}</span>
       </label>
-      <div class="admin__field-control admin__control-fields"
-        css="'_with-tooltip': $data.tooltip, '_with-reset': $data.showFallbackReset && $data.isDifferedFromDefault">
+      <div className="admin__field-control admin__control-fields">
         <Component handleChange={handleChange}
           name={attr.name} 
           value={value} />
@@ -46,10 +45,9 @@ const Field = ({value,handleChange,attr})=>{
 }
 
 Field.propTypes = {
-  label:PropTypes.string.isRequired,
   value:PropTypes.string,
+  attr:PropTypes.object.isRequired,
   handleChange:PropTypes.func.isRequired,
-  name :PropTypes.string
 }
 
 export default Field;

@@ -37,10 +37,10 @@ class Fieldset extends React.Component {
         </div>
 
         <div className={"admin__fieldset-wrapper-content admin__collapsible-content " + open}>
-          
           <fieldset className="admin__fieldset">
             {attributes.map(attr=>{
-              return (<Field attr={attr}
+              return (<Field key={attr.id}
+                attr={attr}
               handleChange={handleChange}
               value={form[attr.name]}
                />);

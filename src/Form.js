@@ -54,16 +54,16 @@ class Form extends React.Component {
   render() {
   
     const {attributes,groups} = this.props;
+    const SortedGroups = groups.map(g=>{
+      let attrs = g.attributes.map(id=>attributes.find(a=>a.id==id));
+      return {...g,attributes:attrs}
+    })
     return (
       <React.Fragment>
-        <div>
-          <p>You are editing <strong>{this.state.product.name}</strong></p>
-        </div>
         <form>
           <div>
-            {groups.map(g=>{
-              let attrs = attributes.filter(value=>(g.attributes.indexOf(value.id)!==-1)); 
-              return (<Fieldset form={this.state.form} handleChange={this.handleChange} attributes={attrs} key={g._index} label={g.label}/>);
+            {SortedGroups.map(g=>{
+              return (<Fieldset form={this.state.form} handleChange={this.handleChange} attributes={g.attributes} key={g._index} label={g.label}/>);
             })}
           </div>
         </form>
@@ -76,7 +76,7 @@ class Form extends React.Component {
 Form.propTypes = {
   entityId: PropTypes.number.isRequired,
   attributes:PropTypes.array.isRequired,
-  groups:PropTypes.object.isRequired
+  groups:PropTypes.array.isRequired
 }
 
 export default Form;
