@@ -1,5 +1,12 @@
 import React from "react";
 import {render} from "react-dom";
 import App from 'App';
+import Wizard from 'Wizard';
 
-render(<App/>, document.getElementById("root"));
+if(true){
+  render(<Wizard/>, document.getElementById("root"));
+}else{
+  render(<App/>, document.getElementById("root"));
+}
+
+

@@ -44,7 +44,12 @@ const GridView = (props) => (
 const ProductForm = (props) => {
 
   const entityId = parseInt(props.match.params.id);
-  return (<Form entityId={entityId} groups={groups} attributes={attributes}/>)
+  return (
+    <React.Fragment>
+    <PageAction label="Save" handleClick={handleClick}/>
+    <Form entityId={entityId} groups={groups} attributes={attributes}/>
+    </React.Fragment>
+  )
 }
 
 const App = (props) => (

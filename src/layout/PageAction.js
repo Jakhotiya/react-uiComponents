@@ -7,8 +7,8 @@ class PageAction extends React.Component
     return (
       <div className="page-main-actions">
         <div className="page-actions">
-          <div title="Add Product" className="actions-split">
-            <button onClick={this.props.handleClick} id="add_new_product-button" title={this.props.label} className="action-default primary add">
+          <div title={this.props.label} className="page-actions-buttons">
+            <button onClick={this.props.handleClick} title={this.props.label} className="action-default primary add">
               <span>{this.props.label}</span>
             </button>
           </div>

@@ -293,7 +293,7 @@
     {
       "attribute_id": 97,
       "attribute_code": "status",
-      "frontend_input": "select",
+      "frontend_input": "switch",
       "is_required": false,
       "options": [
         {

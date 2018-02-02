@@ -4,41 +4,36 @@ import Input from 'Components/form/element/Input';
 import TextArea from 'Components/form/element/TextArea';
 import Checkbox from 'Components/form/element/Checkbox';
 import Switcher from 'Components/form/element/Switcher';
+import Price from 'Components/form/element/Price';
+import Select from 'Components/form/element/Select';
 
 //@magento file : Magento_Ui/view/base/web/templates/form/field.html
 //@TODO add Tooltip component
 
-
-const getField = (attr)=>{
-  let Component = ()=>{};
-  switch (attr.type){
-    case 'checkbox':
-      Component=Checkbox;
-      break;
-    case 'select':
-      Component = Switcher;
-       break;  
-    case 'textarea':
-      Component=TextArea;
-      break;
-    case 'text':
-    default :
-      Component = Input;
-  }
-  return Component;
+const fieldTypes={
+  checkbox:Checkbox,
+  switch:Switcher,
+  select:Select,
+  textarea:TextArea,
+  price:Price,
+  text:Input
 }
 
-const Field = ({value,handleChange,attr})=>{
-  const Component = getField(attr);
+
+const createField = ({handleChange,value,attr})=>{
+  let Component = fieldTypes[attr.type] || Input;
+
+  return <Component handleChange={handleChange} value={value} {...attr}/>;
+}
+
+const Field = (props)=>{
   return (
     <div className="admin__field">
       <label className="admin__field-label">
-        <span>{attr.label}</span>
+        <span>{props.attr.label}</span>
       </label>
       <div className="admin__field-control admin__control-fields">
-        <Component handleChange={handleChange}
-          name={attr.name} 
-          value={value} />
+        {createField(props)}
       </div>
     </div>
   );
