@@ -87,6 +87,14 @@ class Filters extends Component {
     this.closeFilters();
   }
 
+  clearFilter = ()=>{
+
+  }
+
+  clearAll = ()=>{
+
+  }
+
   closeFilters = () => {
     this.setState({ open: false });
   }
@@ -109,7 +117,7 @@ class Filters extends Component {
           </div>
         </div>
 
-        <Chips previews={chips} />
+        <Chips clearAll={this.clearAll} previews={chips} clearFilter={this.clearFilter} />
 
         <div className={"admin__data-grid-filters-wrap " + show}>
           <fieldset className="admin__fieldset admin__data-grid-filters">

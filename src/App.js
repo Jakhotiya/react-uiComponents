@@ -1,5 +1,6 @@
-import React from "react";
+import React, {Fragment} from "react";
 import {render} from "react-dom";
+import ErrorBoundary from './ErrorBoundary';
 import {
   BrowserRouter as Router,
   Route
@@ -35,26 +36,26 @@ const groups = Object.values(mage.groups);
 const handleClick = (e)=>console.log('Caught the click');
 
 const GridView = (props) => (
-  <React.Fragment>
+  <ErrorBoundary>
     <PageAction label="Add Product" handleClick={handleClick}/>
     <Grid columns={columns} {...data} />
-  </React.Fragment>
+  </ErrorBoundary>
 );
 
 const ProductForm = (props) => {
 
   const entityId = parseInt(props.match.params.id);
   return (
-    <React.Fragment>
+    <ErrorBoundary>
     <PageAction label="Save" handleClick={handleClick}/>
     <Form entityId={entityId} groups={groups} attributes={attributes}/>
-    </React.Fragment>
+    </ErrorBoundary>
   )
 }
 
 const App = (props) => (
   <Router>
-    <React.Fragment>
+    <Fragment>
       <Sidenav/>
       <div className='page-wrapper'>
         <Header/>
@@ -65,7 +66,7 @@ const App = (props) => (
         </main>
         <Footer/>
       </div>
-    </React.Fragment>
+    </Fragment>
   </Router>
 );
 

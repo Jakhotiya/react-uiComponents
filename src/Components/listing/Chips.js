@@ -28,12 +28,13 @@ const Chip = ({ label, index, value,...props }) => {
 Chip.propTypes = {
   index: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
-  value: PropTypes.object
+  value: PropTypes.object,
+  clearFilter:PropTypes.func.isRequired
 }
 
 //previews is just magento term for active filters
 
-const Chips = ({ previews, clear }) => {
+const Chips = ({ previews, clearAll,clearFilter }) => {
 
   const show = previews.length > 0 ? '_show' : '';
   return (
@@ -45,12 +46,12 @@ const Chips = ({ previews, clear }) => {
       </div>
       <div className="admin__current-filters-list-wrap">
         <ul className="admin__current-filters-list">
-          {previews.map(prev => <Chip key={prev.index} {...prev} />)}
+          {previews.map(prev => <Chip key={prev.index} clearFilter={clearFilter} {...prev} />)}
         </ul>
       </div>
       <div className="admin__current-filters-actions-wrap">
         <button className="action-tertiary action-clear" type="button"
-          onClick={clear}>
+          onClick={clearAll}>
           Clear all
           </button>
       </div>
@@ -60,7 +61,7 @@ const Chips = ({ previews, clear }) => {
 
 Chips.propTypes = {
   previews: PropTypes.array,
-  clear: PropTypes.func
+  clearAll: PropTypes.func.isRequired
 }
 
 export default Chips;

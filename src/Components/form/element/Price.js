@@ -3,7 +3,7 @@ import React from 'react';
 
 const Price = props => {
   return (
-    <div class="admin__control-addon">
+    <div className="admin__control-addon">
     <input className="admin__control-text" type="text"
       onChange={e=>props.handleChange(props.name,e.target.value)}
       value={props.value}
@@ -11,7 +11,7 @@ const Price = props => {
       placeholder={props.placeholder}
       disabled={props.disabled}
     />
-      <label class="admin__addon-prefix" ><span>$</span></label>
+      <label className="admin__addon-prefix" ><span>$</span></label>
     </div>
   );
 }
