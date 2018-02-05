@@ -49,11 +49,7 @@
     "webpack-manifest-plugin": "1.3.2",
     "whatwg-fetch": "2.0.3"
   },
-  "devDependencies": {
-    "minimist": "^1.2.0",
-    "run-electron-webpack-plugin": "^0.1.0",
-    "webpack-target-electron-renderer": "^0.4.0"
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "node scripts/start.js",
     "start-electron": "electron electron-start.js",
