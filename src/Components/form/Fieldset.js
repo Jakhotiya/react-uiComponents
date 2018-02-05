@@ -14,7 +14,7 @@ class Fieldset extends React.Component {
   }
 
   render() {
-    const open = this.state.open ? '_show' : '_hide';
+    const open = this.state.open || this.props.label=='Product details' ? '_show' : '_hide';
     const { form, attributes,handleChange} = this.props;
 
     return (

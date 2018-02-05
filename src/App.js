@@ -3,8 +3,10 @@ import {render} from "react-dom";
 import ErrorBoundary from './ErrorBoundary';
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  withRouter
 } from 'react-router-dom';
+
 
 import Grid from "./Grid";
 import {data, Columns} from "./data-structures";
@@ -37,21 +39,20 @@ const handleClick = (e)=>console.log('Caught the click');
 
 const GridView = (props) => (
   <ErrorBoundary>
-    <PageAction label="Add Product" handleClick={handleClick}/>
+    <PageAction  label="Add Product" handleClick={handleClick}/>
     <Grid columns={columns} {...data} />
   </ErrorBoundary>
 );
 
-const ProductForm = (props) => {
+const ProductForm = withRouter((props) => {
 
   const entityId = parseInt(props.match.params.id);
   return (
     <ErrorBoundary>
-    <PageAction label="Save" handleClick={handleClick}/>
-    <Form entityId={entityId} groups={groups} attributes={attributes}/>
+      <Form history={props.history} entityId={entityId} groups={groups} attributes={attributes}/>
     </ErrorBoundary>
   )
-}
+})
 
 const App = (props) => (
   <Router>
@@ -71,5 +72,3 @@ const App = (props) => (
 );
 
 export default App;
-
-render(<App/>, document.getElementById("root"));

@@ -2,7 +2,10 @@
   "name": "react-uicomponents",
   "description": "Magento 2 uiComponents in React",
   "version": "0.0.43",
+  "homepage": "./",
   "dependencies": {
+    "axios": "^0.17.1",
+    "electron": "^1.7.12",
     "react": "16.2.0",
     "react-dom": "16.2.0",
     "react-redux": "^5.0.6",
@@ -10,10 +13,14 @@
     "redux": "^3.7.2"
   },
   "devDependencies": {
-    "react-scripts": "1.1.0"
+    "minimist": "^1.2.0",
+    "react-scripts": "1.1.0",
+    "run-electron-webpack-plugin": "^0.1.0",
+    "webpack-target-electron-renderer": "^0.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
+    "start-electron": "electron electron-start.js",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"

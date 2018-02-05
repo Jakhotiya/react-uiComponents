@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 
 import Fieldset from 'Components/form/Fieldset';
 import { data } from './data-structures';
+import PageAction from 'layout/PageAction';
+
+import handler from 'tasks/handler';
+import {UPDATE_PRODUCT} from "./tasks/task-types";
+
 
 //@TODO clearly describe and document handler APIs
 import Handler from './field-handlers';
@@ -37,7 +42,7 @@ class Form extends React.Component {
     } else {
       form[name] = value;
     }
-    this.setState({form});
+    this.setState({form:{...this.state.form,...form}});
   }
 
   /**
@@ -51,6 +56,15 @@ class Form extends React.Component {
     this.setState({form:product});
   }
 
+  save = ()=>{
+      handler.addTask({
+        type:UPDATE_PRODUCT,
+        data:this.state.form,
+        entityId:this.state.form.entity_id
+      })
+    this.props.history.push('/');
+  }
+
   render() {
   
     const {attributes,groups} = this.props;
@@ -60,6 +74,7 @@ class Form extends React.Component {
     })
     return (
       <React.Fragment>
+        <PageAction label="Save" handleClick={this.save}/>
         <form>
           <div>
             {SortedGroups.map(g=>{
@@ -78,6 +93,8 @@ Form.propTypes = {
   attributes:PropTypes.array.isRequired,
   groups:PropTypes.array.isRequired
 }
+
+
 
 export default Form;
 
