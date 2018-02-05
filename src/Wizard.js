@@ -1,5 +1,4 @@
 import React from 'react';
-import {withRouter,Link, Route} from 'react-router-dom';
 import Download from 'setup/Download';
 import 'setup/setup.css';
 
@@ -123,10 +122,10 @@ const Actions = props => (
   <div className={`nav-bar-outer-actions ${props.navShow}`}>
     <div className="outer-actions-inner-wrap">
       <div className="btn-wrap btn-wrap-triangle-right btn-wrap-next">
-        <button type="button" className="btn btn-prime" onClick={e => props.next()}>Next</button>
+        <button type="button" className="btn btn-prime" onClick={props.next}>Next</button>
       </div>
       <div className="btn-wrap btn-wrap-triangle-left btn-wrap-prev">
-        <button type="button" className="btn" onClick={e => props.prev()}>Back</button>
+        <button type="button" className="btn" onClick={props.prev}>Back</button>
       </div>
     </div>
   </div>
@@ -149,31 +148,24 @@ class Wizard extends React.Component {
 
   }
 
-  next=()=>{
-    if(this.state.step==2){
-      this.state.step=3
-      this.props.history.push('/download');
+  next=(e)=>{
+    e.preventDefault();
+    if(this.state.step===2){
+      this.setState({step:3});
       return;
     }
     this.setState({step:2})
-    this.props.history.push('/api');
   }
 
-  prev=()=>{
-    if(this.state.step==1) return;
+  prev=(e)=>{
+    e.preventDefault();
+    if(this.state.step===1) return;
     this.setState({step:1})
-    this.props.history.push('/store');
   }
-
-
 
 
   handleChange = (name, value) => {
     this.setState({[name]: value});
-  }
-
-  download = ()=>{
-
   }
 
   render() {
@@ -187,24 +179,24 @@ class Wizard extends React.Component {
             <nav className={`nav ${navShow}`}>
               <ul className='nav-bar'>
                 <li className="active">
-                  <Link className='white-space-pre-line' to="/store">
+                  <a className='white-space-pre-line' onClick={this.next}>
                     Store
                     Information
-                  </Link>
+                  </a>
                 </li>
                 <li className={this.state.step===2 ? 'active' : ''}>
-                  <Link className='white-space-pre-line' to="/api"> API keys </Link>
+                  <a className='white-space-pre-line' onClick={this.prev}> API keys </a>
                 </li>
               </ul>
             </nav>
             <Actions navShow={navShow} step={this.state.step} next={this.next} prev={this.prev}/>
-            <Route path='/store' render={() => <Store form={this.state} handleChange={this.handleChange}/>}/>
-            <Route path='/api' render={()=>(<Api form={this.state} handleChange={this.handleChange}/>)}/>
-            <Route path='/download' component={Download}/>
+            { this.state.step===1 && <Store form={this.state} handleChange={this.handleChange}/>}
+            {this.state.step===2 && <Api form={this.state} handleChange={this.handleChange}/>}
+            {this.state.step===3 && <Download/>}
           </div>
         </div>
     );
   }
 }
 
-export default withRouter(Wizard);
+export default Wizard;

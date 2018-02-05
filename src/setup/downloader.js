@@ -1,3 +1,4 @@
+import {getProducts} from '../api/Api';
 
 const fakePromise = ()=>new Promise((resolve,reject)=>{
   setTimeout(resolve,2000)
@@ -8,7 +9,7 @@ const downloader = {
   getAttributeSets : fakePromise,
   getTaxRules : fakePromise,
   getStores : fakePromise,
-  getProducts : fakePromise,
+  getProducts : getProducts,
   getCategories : fakePromise
 }
 
