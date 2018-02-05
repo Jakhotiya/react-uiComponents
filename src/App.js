@@ -2,7 +2,7 @@ import React, {Fragment} from "react";
 import {render} from "react-dom";
 import ErrorBoundary from './ErrorBoundary';
 import {
-  BrowserRouter as Router,
+  HashRouter as Router,
   Route,
   withRouter
 } from 'react-router-dom';
